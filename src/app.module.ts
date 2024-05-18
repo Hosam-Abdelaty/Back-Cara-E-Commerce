@@ -24,9 +24,7 @@ import { CommentsModule } from './Endpoints/comments/comments.module';
     CheckOutModule,
     CommentsModule,
     ServeStaticModule.forRoot({ rootPath: join(__dirname, '..', 'public') }),
-    MongooseModule.forRoot(
-      'mongodb+srv://hosamabdelaty25:0115060708090Mm@cluster0.2c6xoym.mongodb.net/E-Commerce',
-    ),
+    MongooseModule.forRoot(process.env.DATABASE),
     JwtModule.register({
       secret: 'project',
       signOptions: { expiresIn: '30d' },
